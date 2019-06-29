@@ -7,5 +7,11 @@ namespace JCBlogProject.Models
 {
     public class Post_Tag
     {
+        public int Id { get; set; }
+        public virtual int PostId { get; set; }
+        public virtual Post Posts { get; set; }
+
+        public virtual int TagId { get; set; }
+        public virtual Tag Tags { get; set; }
     }
 }
