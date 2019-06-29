@@ -1,7 +1,27 @@
-﻿
+﻿@model IEnumerable<JCBlogProject.Models.Post>
+
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Product by Category</title>
+</head>
+<body>
+    <h1>Category List</h1>
+    @foreach (var Post in Model)
+    {
+        <a href="~/Post/Index/@Post.Id">@Post.Title</a>
+        @Post.PostDate
+        <hr />
+    }
+    <a href="~/Genre/Index/">View Posts by Genre</a>
+    <a href="~/Tag/Index/">View POsts by Tag</a>
+
+</body>
+</html>
