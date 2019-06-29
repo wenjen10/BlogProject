@@ -10,18 +10,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
     <meta name="viewport" content="width=device-width" />
-    <title>Product by Category</title>
+    <title>JC Blog Site</title>
 </head>
 <body>
-    <h1>Category List</h1>
+    <a href="~/Genre/Index/">View Posts by Genre</a>
+    <a href="~/Tag/Index/">View POsts by Tag</a>
+    <h1>Post List</h1>
     @foreach (var Post in Model)
     {
-        <a href="~/Post/Index/@Post.Id">@Post.Title</a>
+    <h2><a href="~/Post/Index/@Post.Id">@Post.Title</a></h2>
+        <h3>@Post.Author</h3>
+        <p>@Post.Content</p>
         @Post.PostDate
         <hr />
     }
-    <a href="~/Genre/Index/">View Posts by Genre</a>
-    <a href="~/Tag/Index/">View POsts by Tag</a>
 
 </body>
 </html>
