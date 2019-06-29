@@ -27,7 +27,7 @@ namespace JCBlogProject.Repositories
 
         public Genre GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Genres.Single(c => c.Id == id);
         }
     }
 }

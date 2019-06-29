@@ -23,5 +23,10 @@ namespace JCBlogProject.Controllers
             return View(model);
         }
 
+        public ViewResult Details(int id)
+        {
+            var model = genreRepo.GetById(id);
+            return View(model);
+        }
     }
 }

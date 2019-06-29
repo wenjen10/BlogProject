@@ -27,7 +27,7 @@ namespace JCBlogProject.Repositories
 
         public Tag GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Tags.Single(c => c.Id == id);
         }
     }
 }

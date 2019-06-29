@@ -1,7 +1,23 @@
-﻿
+﻿@model IEnumerable<JCBlogProject.Models.Tag>
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
-
-<h2>Index</h2>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Pick a tag</title>
+</head>
+<body>
+    <main>
+        <h1>"Tag List</h1>
+        @foreach (var tag in Model)
+        {
+            <a href="~/tag/Details/@tag.Id">@tag.Name</a>
+            <hr />
+        }
+        <a href="~/post/Index/">Return</a>
+    </main>
+</body>
+</html>

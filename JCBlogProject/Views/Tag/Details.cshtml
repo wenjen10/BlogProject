@@ -1,7 +1,33 @@
-﻿
+﻿@model JCBlogProject.Models.Tag
+
+
 @{
-    ViewData["Title"] = "Details";
+    Layout = null;
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <header>
+        <h1>@Model.Name </h1>
+        <section id="offWhite"></section>
+    </header>
+    <main>
+        <h1>Posts</h1>
+        @foreach (var post in Model.Posts)
+        {
+            <a href="~/Product/Details/@post.Id">@post.Title</a>
+            <h2>@post.Author</h2>
+            <p>@post.Content</p>
+            <hr />
+        }
+        <a href="~/Tag/Index/">Return To Tag Select</a>
+    </main>
+</body>
+</html>
