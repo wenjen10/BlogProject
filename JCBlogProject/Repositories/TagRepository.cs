@@ -14,6 +14,12 @@ namespace JCBlogProject.Repositories
         {
             this.db = db;
         }
+
+        public void Create(Tag obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Tag> GetAll()
         {
             return db.Tags.ToList();

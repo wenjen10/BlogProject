@@ -22,5 +22,18 @@ namespace JCBlogProject.Controllers
             var model = postRepo.GetAll();
             return View(model);
         }
+        [HttpGet]
+        public ViewResult Create(int id)
+        {
+            //ViewBag.PostId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Post post)
+        {
+            postRepo.Create(post);
+            return RedirectToAction("index");
+        }
     }
 }

@@ -15,6 +15,11 @@ namespace JCBlogProject.Repositories
             this.db = db;
         }
 
+        public void Create(Genre obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Genre> GetAll()
         {
             return db.Genres.ToList();

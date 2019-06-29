@@ -46,7 +46,7 @@ namespace JCBlogProject
                     Id = 1,
                     Title = "hi",
                     Author = "Jim",
-                    Content = "hello sally",
+                    Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     PostDate = new DateTime(1984, 12, 16, 12, 32, 54, DateTimeKind.Unspecified),
                     GenreId = 1,
                 },
@@ -54,9 +54,9 @@ namespace JCBlogProject
                 new Post()
                 {
                     Id = 2,
-                    Title = "bye",
+                    Title = "Lorem",
                     Author = "sally",
-                    Content = "goodby jim",
+                    Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     PostDate = new DateTime(1600, 10, 16, 05, 32, 54, DateTimeKind.Unspecified),
                     GenreId = 2,
                 },
@@ -64,9 +64,9 @@ namespace JCBlogProject
                 new Post()
                 {
                     Id = 3,
-                    Title = "bye",
+                    Title = "Ipsum",
                     Author = "sally",
-                    Content = "goodby jim",
+                    Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     PostDate = new DateTime(1492, 5, 13, 14, 26, 34, DateTimeKind.Unspecified),
                     GenreId = 2,
                 }
@@ -120,12 +120,12 @@ namespace JCBlogProject
                 new Tag()
                 {
                     Id = 2,
-                    Name = "Bye",
+                    Name = "Salutation",
                 },
                 new Tag()
                 {
                     Id = 3,
-                    Name = "ye",
+                    Name = "yeet",
                 }
 
             );
