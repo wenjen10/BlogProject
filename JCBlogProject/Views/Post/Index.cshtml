@@ -16,11 +16,16 @@
     <a href="~/Genre/Index/">View Posts by Genre</a>
     <a href="~/Tag/Index/">View POsts by Tag</a>
     <h1>Post List</h1>
+
+    <a href="~/Post/Create/">Create a Post</a>
+
     @foreach (var Post in Model)
     {
-    <h2><a href="~/Post/Index/@Post.Id">@Post.Title</a></h2>
-        <h3>@Post.Author</h3>
+        <h2>Title: @Post.Title</h2>
+        <h3>Author: @Post.Author</h3>
         <p>@Post.Content</p>
+        <span><a href="~/Post/Edit/@Post.Id">Edit Post</a></span>
+        <span><a href="~/Post/Delete/@Post.Id">Delete Post</a></span>
         @Post.PostDate
         <hr />
     }

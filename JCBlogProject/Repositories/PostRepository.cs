@@ -25,11 +25,11 @@ namespace JCBlogProject.Repositories
             return db.Posts.Single(c => c.Id == id);
         }
 
-        //public void Create(Post post)
-        //{
-        //    db.Posts.Add(post);
-        //    db.SaveChanges();
-        //}
+        public void Create(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+        }
 
         //public void Delete(Post post)
         //{
