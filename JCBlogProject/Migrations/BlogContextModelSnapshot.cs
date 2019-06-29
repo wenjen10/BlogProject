@@ -51,11 +51,15 @@ namespace JCBlogProject.Migrations
 
                     b.Property<DateTime>("PostDate");
 
+                    b.Property<int?>("TagId");
+
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GenreId");
+
+                    b.HasIndex("TagId");
 
                     b.ToTable("Posts");
 
@@ -119,6 +123,10 @@ namespace JCBlogProject.Migrations
                         .WithMany("Posts")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("JCBlogProject.Models.Tag")
+                        .WithMany("Posts")
+                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("JCBlogProject.Models.Post_Tag", b =>
