@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JCBlogProject.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20190629172029_FirstMigration")]
+    [Migration("20190630160045_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,15 +62,15 @@ namespace JCBlogProject.Migrations
                     b.ToTable("Posts");
 
                     b.HasData(
-                        new { Id = 1, Author = "Jim", Content = "hello sally", GenreId = 1, PostDate = new DateTime(1984, 12, 16, 12, 32, 54, 0, DateTimeKind.Unspecified), Title = "hi" },
-                        new { Id = 2, Author = "sally", Content = "goodby jim", GenreId = 2, PostDate = new DateTime(1600, 10, 16, 5, 32, 54, 0, DateTimeKind.Unspecified), Title = "bye" },
-                        new { Id = 3, Author = "sally", Content = "goodby jim", GenreId = 2, PostDate = new DateTime(1492, 5, 13, 14, 26, 34, 0, DateTimeKind.Unspecified), Title = "bye" }
+                        new { Id = 1, Author = "Jim", Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", GenreId = 1, PostDate = new DateTime(1984, 12, 16, 12, 32, 54, 0, DateTimeKind.Unspecified), Title = "hi" },
+                        new { Id = 2, Author = "sally", Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", GenreId = 2, PostDate = new DateTime(1600, 10, 16, 5, 32, 54, 0, DateTimeKind.Unspecified), Title = "Lorem" },
+                        new { Id = 3, Author = "sally", Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", GenreId = 2, PostDate = new DateTime(1492, 5, 13, 14, 26, 34, 0, DateTimeKind.Unspecified), Title = "Ipsum" }
                     );
                 });
 
             modelBuilder.Entity("JCBlogProject.Models.Post_Tag", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Post_TagId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -78,7 +78,7 @@ namespace JCBlogProject.Migrations
 
                     b.Property<int>("TagId");
 
-                    b.HasKey("Id");
+                    b.HasKey("Post_TagId");
 
                     b.HasIndex("PostId");
 
@@ -87,12 +87,12 @@ namespace JCBlogProject.Migrations
                     b.ToTable("Post_Tags");
 
                     b.HasData(
-                        new { Id = 1, PostId = 1, TagId = 1 },
-                        new { Id = 2, PostId = 1, TagId = 2 },
-                        new { Id = 3, PostId = 2, TagId = 2 },
-                        new { Id = 4, PostId = 2, TagId = 3 },
-                        new { Id = 5, PostId = 3, TagId = 1 },
-                        new { Id = 6, PostId = 3, TagId = 3 }
+                        new { Post_TagId = 1, PostId = 1, TagId = 1 },
+                        new { Post_TagId = 2, PostId = 1, TagId = 2 },
+                        new { Post_TagId = 3, PostId = 2, TagId = 2 },
+                        new { Post_TagId = 4, PostId = 2, TagId = 3 },
+                        new { Post_TagId = 5, PostId = 3, TagId = 1 },
+                        new { Post_TagId = 6, PostId = 3, TagId = 3 }
                     );
                 });
 
@@ -110,8 +110,8 @@ namespace JCBlogProject.Migrations
 
                     b.HasData(
                         new { Id = 1, Name = "greeting" },
-                        new { Id = 2, Name = "Bye" },
-                        new { Id = 3, Name = "ye" }
+                        new { Id = 2, Name = "Salutation" },
+                        new { Id = 3, Name = "yeet" }
                     );
                 });
 

@@ -20,7 +20,8 @@ namespace JCBlogProject.Controllers
         [HttpGet]
         public ViewResult Create(int id)
         {
-            //ViewBag.PostId = id;
+           
+            ViewBag.PostId = id;
             return View();
         }
 

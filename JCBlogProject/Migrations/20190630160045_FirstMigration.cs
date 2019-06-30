@@ -61,14 +61,14 @@ namespace JCBlogProject.Migrations
                 name: "Post_Tags",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Post_TagId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PostId = table.Column<int>(nullable: false),
                     TagId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Post_Tags", x => x.Id);
+                    table.PrimaryKey("PK_Post_Tags", x => x.Post_TagId);
                     table.ForeignKey(
                         name: "FK_Post_Tags_Posts_PostId",
                         column: x => x.PostId,
@@ -98,28 +98,28 @@ namespace JCBlogProject.Migrations
                 values: new object[,]
                 {
                     { 1, "greeting" },
-                    { 2, "Bye" },
-                    { 3, "ye" }
+                    { 2, "Salutation" },
+                    { 3, "yeet" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Author", "Content", "GenreId", "PostDate", "Title" },
-                values: new object[] { 1, "Jim", "hello sally", 1, new DateTime(1984, 12, 16, 12, 32, 54, 0, DateTimeKind.Unspecified), "hi" });
+                values: new object[] { 1, "Jim", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 1, new DateTime(1984, 12, 16, 12, 32, 54, 0, DateTimeKind.Unspecified), "hi" });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Author", "Content", "GenreId", "PostDate", "Title" },
-                values: new object[] { 2, "sally", "goodby jim", 2, new DateTime(1600, 10, 16, 5, 32, 54, 0, DateTimeKind.Unspecified), "bye" });
+                values: new object[] { 2, "sally", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 2, new DateTime(1600, 10, 16, 5, 32, 54, 0, DateTimeKind.Unspecified), "Lorem" });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "Author", "Content", "GenreId", "PostDate", "Title" },
-                values: new object[] { 3, "sally", "goodby jim", 2, new DateTime(1492, 5, 13, 14, 26, 34, 0, DateTimeKind.Unspecified), "bye" });
+                values: new object[] { 3, "sally", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 2, new DateTime(1492, 5, 13, 14, 26, 34, 0, DateTimeKind.Unspecified), "Ipsum" });
 
             migrationBuilder.InsertData(
                 table: "Post_Tags",
-                columns: new[] { "Id", "PostId", "TagId" },
+                columns: new[] { "Post_TagId", "PostId", "TagId" },
                 values: new object[,]
                 {
                     { 1, 1, 1 },

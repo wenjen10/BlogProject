@@ -25,7 +25,7 @@ namespace JCBlogProject.Controllers
         [HttpGet]
         public ViewResult Create(int id)
         {
-            ViewBag.Post_TagId = id;
+            //ViewBag.Post_TagId = id;
             return View();
         }
 

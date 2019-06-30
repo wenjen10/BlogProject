@@ -10,9 +10,15 @@ namespace JCBlogProject.Repositories
     {
         private BlogContext db;
 
+        public Post_TagRepository(BlogContext db)
+        {
+            this.db = db;
+        }
+
         public void Create(Post_Tag post_Tag)
         {
-            throw new NotImplementedException();
+            db.Post_Tags.Add(post_Tag);
+            db.SaveChanges();
         }
 
         public void Edit(Post_Tag obj)
@@ -32,7 +38,7 @@ namespace JCBlogProject.Repositories
 
         public Post_Tag GetById(int id)
         {
-            throw new NotImplementedException();
+            return db.Post_Tags.Single(c => c.Post_TagId == id);
         }
     }
 }

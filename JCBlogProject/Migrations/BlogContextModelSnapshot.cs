@@ -51,15 +51,11 @@ namespace JCBlogProject.Migrations
 
                     b.Property<DateTime>("PostDate");
 
-                    b.Property<int?>("TagId");
-
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GenreId");
-
-                    b.HasIndex("TagId");
 
                     b.ToTable("Posts");
 
@@ -72,7 +68,7 @@ namespace JCBlogProject.Migrations
 
             modelBuilder.Entity("JCBlogProject.Models.Post_Tag", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Post_TagId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -80,7 +76,7 @@ namespace JCBlogProject.Migrations
 
                     b.Property<int>("TagId");
 
-                    b.HasKey("Id");
+                    b.HasKey("Post_TagId");
 
                     b.HasIndex("PostId");
 
@@ -89,12 +85,12 @@ namespace JCBlogProject.Migrations
                     b.ToTable("Post_Tags");
 
                     b.HasData(
-                        new { Id = 1, PostId = 1, TagId = 1 },
-                        new { Id = 2, PostId = 1, TagId = 2 },
-                        new { Id = 3, PostId = 2, TagId = 2 },
-                        new { Id = 4, PostId = 2, TagId = 3 },
-                        new { Id = 5, PostId = 3, TagId = 1 },
-                        new { Id = 6, PostId = 3, TagId = 3 }
+                        new { Post_TagId = 1, PostId = 1, TagId = 1 },
+                        new { Post_TagId = 2, PostId = 1, TagId = 2 },
+                        new { Post_TagId = 3, PostId = 2, TagId = 2 },
+                        new { Post_TagId = 4, PostId = 2, TagId = 3 },
+                        new { Post_TagId = 5, PostId = 3, TagId = 1 },
+                        new { Post_TagId = 6, PostId = 3, TagId = 3 }
                     );
                 });
 
@@ -123,10 +119,6 @@ namespace JCBlogProject.Migrations
                         .WithMany("Posts")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("JCBlogProject.Models.Tag")
-                        .WithMany("Posts")
-                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("JCBlogProject.Models.Post_Tag", b =>

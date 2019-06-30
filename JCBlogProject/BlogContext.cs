@@ -75,37 +75,37 @@ namespace JCBlogProject
             modelBuilder.Entity<Post_Tag>().HasData(
                 new Post_Tag()
                 {
-                    Id = 1,
+                    Post_TagId = 1,
                     PostId = 1,
                     TagId = 1
                 },
                 new Post_Tag()
                 {
-                    Id = 2,
+                    Post_TagId = 2,
                     PostId = 1,
                     TagId = 2
                 },
                 new Post_Tag()
                 {
-                    Id = 3,
+                    Post_TagId = 3,
                     PostId = 2,
                     TagId = 2
                 },
                 new Post_Tag()
                 {
-                    Id = 4,
+                    Post_TagId = 4,
                     PostId = 2,
                     TagId = 3
                 },
                 new Post_Tag()
                 {
-                    Id = 5,
+                    Post_TagId = 5,
                     PostId = 3,
                     TagId = 1
                 },
                 new Post_Tag()
                 {
-                    Id = 6,
+                    Post_TagId = 6,
                     PostId = 3,
                     TagId = 3
                 }
