@@ -22,9 +22,7 @@
         <h1>Posts</h1>
         @foreach (var post_tag in Model.Post_Tags)
         {
-            @*<a href="~/Product/Details/@post_tag.Id">@post_tag.PostId</a>*@
         <h2>@post_tag.Posts.Title</h2>
-            
         <span>@post_tag.Posts.Author</span>
         <p>@post_tag.Posts.Content</p>
             <hr />

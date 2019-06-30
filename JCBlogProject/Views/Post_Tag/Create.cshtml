@@ -5,102 +5,35 @@
 @{
     Layout = null;
 }
-
-<h2>Post Tagging</h2>
-
-<h4>Post_Tag</h4>
+<h2>Tag your Post</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
-
-        <h2>Tag your Post</h2>
-        <hr />
-        <div class="row">
-            <div class="col-md-4">
-                
-                
-                <h2>Title: @ViewBag.PostId</h2>
-                <h3>Author:@ViewBag.Author</h3>
-                <p>@ViewBag.Content</p>
-                @ViewBag.PostDate
-                <hr />
-
-                <form asp-action="Create" method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                    <div class="form-group">
-                        <input asp-for="PostId" type="hidden" value="@ViewBag.PostId" class="form-control" />
-                    </div>
-
-                    <h3>Select your Posts tags</h3>
-                    <div class="form-group">
-                        <label asp-for="TagId" class="control-label">First Tag</label>
-                        <select name="TagId">
-                            <option value="">No Tag</option>
-                            <option value="1">greeting</option>
-                            <option value="2">Salutation</option>
-                            <option value="3">yeet</option>
-                        </select>
-                    </div>
-
-
-
-                    @*<div class="form-group">
-            <label asp-for="Post_Tags" class="control-label">Second Tag</label>
-            <select name="TagId">
-                <option value="">No Tag</option>
-                <option value="1">greeting</option>
-                <option value="2">Salutation</option>
-                <option value="3">yeet</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Post_Tags" class="control-label">Third Tag</label>
-            <select name="TagId">
-                <option value="">No Tag</option>
-                <option value="1">greeting</option>
-                <option value="2">Salutation</option>
-                <option value="3">yeet</option>
-            </select>
-        </div>*@
-
-                    <div>
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
-
-                </form>
-            </div>
-        </div>
-
-        <div>
-            <a href="~/Post/Index">Return to Post Page</a>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        @*<form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="PostId" class="control-label"></label>
-                <select asp-for="PostId" class="form-control" asp-items="ViewBag.PostId"></select>
+                <input asp-for="PostId" type="hidden" value="@ViewBag.PostId" class="form-control" />
             </div>
+
+            <h3>Select your Posts tags</h3>
             <div class="form-group">
-                <label asp-for="TagId" class="control-label"></label>
-                <select asp-for="TagId" class="form-control" asp-items="ViewBag.TagId"></select>
+                <label asp-for="TagId" class="control-label">First Tag</label>
+                <select name="TagId">
+                    <option value="">No Tag</option>
+                    <option value="1">greeting</option>
+                    <option value="2">Salutation</option>
+                    <option value="3">yeet</option>
+                </select>
             </div>
-            <div class="form-group">
+            
+            <div>
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
-        </form>*@
+        </form>
+
     </div>
 </div>
 
-
+<div>
+    <a href="~/Post/Index">Return to Post Page</a>
+</div>

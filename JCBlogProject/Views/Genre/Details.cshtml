@@ -22,8 +22,8 @@
         <h1>Posts</h1>
         @foreach (var post in Model.Posts)
         {
-            <a href="~/Product/Details/@post.Id">@post.Title</a>
-            <h2>@post.Author</h2>
+            <h2>@post.Title</h2>
+            <span>@post.Author</span>
             <p>@post.Content</p>
             <hr />
         }
