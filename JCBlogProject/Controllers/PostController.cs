@@ -25,7 +25,7 @@ namespace JCBlogProject.Controllers
         [HttpGet]
         public ViewResult Create(int id)
         {
-            //ViewBag.PostId = id;
+            ViewBag.Post_TagId = id;
             return View();
         }
 
@@ -33,7 +33,35 @@ namespace JCBlogProject.Controllers
         public ActionResult Create(Post post)
         {
             postRepo.Create(post);
-            return RedirectToAction("index");
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            var model = postRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Post post)
+        {
+            postRepo.Edit(post);
+            return RedirectToAction("Index/");
+        }
+
+        [HttpGet]
+        public ViewResult Delete(int id)
+        {
+            var model = postRepo.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Post post)
+        {
+            postRepo.Delete(post);
+            return RedirectToAction("Index");
         }
     }
 }

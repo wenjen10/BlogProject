@@ -30,17 +30,17 @@ namespace JCBlogProject.Repositories
             db.Posts.Add(post);
             db.SaveChanges();
         }
+        public void Edit(Post post)
+        {
+            db.Posts.Update(post);
+            db.SaveChanges();
+        }
 
-        //public void Delete(Post post)
-        //{
-        //    db.Posts.Delete(post)
-        //    db.SaveChanges();
-        //}
+        public void Delete(Post post)
+        {
+            db.Posts.Remove(post);
+            db.SaveChanges();
+        }
 
-        //public void Edit(Post post)
-        //{
-        //    db.Posts.Update(post);
-        //    db.SaveChanges();
-        //}
     }
 }

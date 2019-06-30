@@ -6,38 +6,33 @@ using System.Threading.Tasks;
 
 namespace JCBlogProject.Repositories
 {
-    public class GenreRepository : IRepository<Genre>
+    public class Post_TagRepository : IRepository<Post_Tag>
     {
         private BlogContext db;
 
-        public GenreRepository(BlogContext db)
-        {
-            this.db = db;
-        }
-
-        public void Create(Genre obj)
-        {
-            throw new NotImplementedException();
-        }
-        
-        public void Edit(Genre obj)
+        public void Create(Post_Tag post_Tag)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Genre obj)
+        public void Edit(Post_Tag obj)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Genre> GetAll()
+        public void Delete(Post_Tag obj)
         {
-            return db.Genres.ToList();
+            throw new NotImplementedException();
         }
 
-        public Genre GetById(int id)
+        public IEnumerable<Post_Tag> GetAll()
         {
-            return db.Genres.Single(c => c.Id == id);
+            throw new NotImplementedException();
+        }
+
+        public Post_Tag GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
