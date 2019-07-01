@@ -1,0 +1,73 @@
+﻿@model JCBlogProject.Models.Post
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <title>JC Blog Site</title>
+</head>
+<body>
+
+    <h2>Edit a Post</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <h3>Pick a Genre</h3>
+                    <label asp-for="GenreId" class="control-label">Genre</label>
+                    <select name="GenreId">
+                        <option value="1">Politics</option>
+                        <option value="2">Programming</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h3>Write a Title</h3>
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <h3>Your Name</h3>
+                    <label asp-for="Author" class="control-label"></label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <h3>Your Post</h3>
+                    <label asp-for="Content" class="control-label"></label>
+                    <textarea asp-for="Content" class="form-control" style="width: 300px; height: 150px;"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="PostDate" type="hidden" value="@System.DateTime.Now" class="form-control" />
+                </div>
+                                
+                <div>
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a href="~/Post/Index">Return to Post Page</a>
+    </div>
+
+</body>
+</html>

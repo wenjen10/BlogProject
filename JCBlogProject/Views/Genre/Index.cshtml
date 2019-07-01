@@ -1,0 +1,23 @@
+﻿@model IEnumerable<JCBlogProject.Models.Genre>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Pick a Genre</title>
+</head>
+<body>
+    <main>
+        <h1>Genre List</h1>
+        @foreach (var genre in Model)
+        {
+            <a href="~/Genre/Details/@genre.Id">@genre.Name</a>
+            <hr />
+        }
+        <a href="~/post/Index/">Return</a>
+    </main>
+</body>
+</html>

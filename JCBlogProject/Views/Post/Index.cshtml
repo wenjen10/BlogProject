@@ -1,0 +1,49 @@
+﻿@model IEnumerable<JCBlogProject.Models.Post>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>JC Blog Site</title>
+</head>
+<body>
+    
+    <h1>Post List</h1>
+
+    <a href="~/Post/Create/">Create a Post</a>
+
+    <ul>
+        @foreach (var Post in Model)
+        {
+            <li>
+                <h2>Title: @Post.Title</h2>
+                <h3>Author: @Post.Author</h3>
+                <p>@Post.Content</p>
+                <span><a href="~/Post/Edit/@Post.Id">Edit Post</a></span>
+                <span><a href="~/Post/Delete/@Post.Id">Delete Post</a></span>
+                <span><a href="~/Post_Tag/Create/@Post.Id">Add Tags to this Post</a></span>
+                @Post.PostDate
+                <hr />
+            </li>
+        }
+    </ul>
+
+    <footer>
+        &copy; 2019 JC Productions
+    </footer>
+
+    <nav>
+        <a href="~/Post/Index/">Home</a>
+        <a href="~/Post/Create/">Create a Post</a>
+        <a href="~/Genre/Index/">View Posts by Genre</a>
+        <a href="~/Tag/Index/">View Posts by Tag</a>
+    </nav>
+
+</body>
+</html>

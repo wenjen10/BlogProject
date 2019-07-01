@@ -1,0 +1,39 @@
+﻿@model JCBlogProject.Models.Post_Tag
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+<h2>Tag your Post</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="PostId" type="hidden" value="@ViewBag.PostId" class="form-control" />
+            </div>
+
+            <h3>Select your Posts tags</h3>
+            <div class="form-group">
+                <label asp-for="TagId" class="control-label">First Tag</label>
+                <select name="TagId">
+                    <option value="">No Tag</option>
+                    <option value="1">greeting</option>
+                    <option value="2">Salutation</option>
+                    <option value="3">yeet</option>
+                </select>
+            </div>
+            
+            <div>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a href="~/Post/Index">Return to Post Page</a>
+</div>
