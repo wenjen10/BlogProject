@@ -22,12 +22,20 @@
         <h1>Posts</h1>
         @foreach (var post_tag in Model.Post_Tags)
         {
-        <h2>@post_tag.Posts.Title</h2>
-        <span>@post_tag.Posts.Author</span>
-        <p>@post_tag.Posts.Content</p>
+            <h2>@post_tag.Posts.Title</h2>
+            <span>@post_tag.Posts.Author</span>
+            <p>@post_tag.Posts.Content</p>
             <hr />
         }
         <a href="~/Tag/Index/">Return To Tag Select</a>
     </main>
+
+    <nav>
+        <a href="~/Post/Index/">Home</a>
+        <a href="~/Post/Create/">Create a Post</a>
+        <a href="~/Genre/Index/">View Posts by Genre</a>
+        <a href="~/Tag/Index/">View Posts by Tag</a>
+    </nav>
+
 </body>
 </html>
